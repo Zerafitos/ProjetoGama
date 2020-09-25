@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="/js/login.js"></script>
+    <script src="/js/atendimento.js"></script>
+</head>
+
+<body onload="validaLogin()">
+
+    <div class="col-12 text-right">
+        <button class="btn btn-primary" onclick="logout()">logout</button>
+    </div>
+
+    <div class="container h-100">
+        <form>
+            <br>
+            <label for="txtData">Data:</label>
+            <input type="text" id="txtData" disabled><br>
+            <!-- puxar "data_oc" do banco -->
+            <label for="txtData">Horas gastas:</label>
+            <input type="time" max="02:00" id="txtHoras" ><br>
+            <!-- puxar "num_horas" direto do banco -->
+            <label for="txtAtividade">Atividade:</label>
+            <select>
+                <option value="Execução de Mudança Planejada">Execução de Mudança Planejada</option>
+                <option value="Acionamento por Mudança">Acionamento por Mudança</option>
+                <option value="Acionamento por Incidente">Acionamento por Incidente</option>
+                <option value="Acionamento Indevido">Acionamento Indevido</option>
+                <option value="Cobertura de Turnos">Cobertura de Turnos</option>
+                <option value="Cancelamento de Rotina Batch">Cancelamento de Rotina Batch</option>
+                <option value="Teste de Continuidade">Teste de Continuidade</option>
+                <option value="Sustentação e Operação (24x7)">Sustentação e Operação (24x7)</option>
+                <option value="Implantação de Projeto">Implantação de Projeto</option>
+                <option value="War Room">War Room</option>
+                <option value="TOP TI">TOP TI</option>
+                <option value="Hora não compensada no mês">Hora não compensada no mês</option>
+                <option value="Outros">Outros</option>
+            </select> <br>
+            <!-- inserir concatenação do option puxando do banco
+            `<option value = ${resposta[index].descricao}> ${resposta[index].descricao} </option>`; -->
+            <label for="txtDescricao">Descrição:</label>
+            <textarea rows="4" cols="50" maxlength="255" id="txtDescricao"></textarea> <br>
+            <label for="radioTroca">Ajuste manual?</label>
+            <input type="radio" name="radioTroca" value="0" id="radioTroca" /> SIM
+            <input type="radio" name="radioTroca" value="1" id="radioNaotroca" checked/> NÃO <br>
+            <input type="text" id="txtAtividadeId" hidden><br>
+            <button class="btn btn-primary" onclick="atualizarChamado(event)">Atualizar</button>
+        </form>
+
+        
+    </div>
+</body>
+
+</html>

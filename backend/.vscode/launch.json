@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-JustificativaApplication<justificativa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "br.itau.justificativa.JustificativaApplication",
+            "projectName": "justificativa",
+            "args": ""
+        }
+    ]
+}
